@@ -11,7 +11,7 @@ const FormSchema = z.object({
     amount: z.coerce.number(),
     status: z.enum(['pending', 'paid']),
     date: z.string(),
-})
+});
 
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
@@ -26,7 +26,7 @@ export async function createInvoice(formData: FormData) {
 
     await sql`
         INSERT INTO invoices (customer_id, amount, status, date)
-        VALUES (${customerId}, ${amountInCents}, ${status}, ${date}})
+        VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
     `;
 
     revalidatePath('/dashboard/invoices');
