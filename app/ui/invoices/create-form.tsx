@@ -136,7 +136,7 @@ export default function Form({
               </p>
             ))}
         </div>
-        <div id="paid-status-error" aria-live="polite" aria-atomic="true">
+        <div id="create-invoice-error" aria-live="polite" aria-atomic="true">
           {<p className="mt-2 text-sm text-red-500" key={state.message}>
             {state.message}
           </p>}
